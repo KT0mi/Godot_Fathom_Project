@@ -39,7 +39,7 @@ func compute_stats() -> Dictionary:
 	for part in parts:
 		total_weight += part.data.weight
 		for c in part.occupied_cells():
-			weighted_pos += Vector2(c) * part.data.weight
+			weighted_pos += Vector2(c.x, 0) * part.data.weight
 		total_thickness += part.data.hull_thickness
 		
 	var center_of_mass := Vector2.ZERO

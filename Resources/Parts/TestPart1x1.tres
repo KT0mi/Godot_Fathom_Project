@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="PartData" format=3 uid="uid://b0tn45q80jp5"]
+
+[ext_resource type="Script" uid="uid://ceiao66lx5g" path="res://Scripts/SubmarineBuildingData/PartConnector.gd" id="1_7xxk7"]
+[ext_resource type="Script" uid="uid://ep8h4hxojl7n" path="res://Scripts/SubmarineBuildingData/PartData.gd" id="2_n24ub"]
+
+[sub_resource type="Resource" id="Resource_7xxk7"]
+script = ExtResource("1_7xxk7")
+metadata/_custom_type_script = "uid://ceiao66lx5g"
+
+[sub_resource type="Resource" id="Resource_n24ub"]
+script = ExtResource("1_7xxk7")
+direction = Vector2i(-1, 0)
+metadata/_custom_type_script = "uid://ceiao66lx5g"
+
+[sub_resource type="Resource" id="Resource_jvtf6"]
+script = ExtResource("1_7xxk7")
+direction = Vector2i(0, 1)
+metadata/_custom_type_script = "uid://ceiao66lx5g"
+
+[sub_resource type="Resource" id="Resource_yxqau"]
+script = ExtResource("1_7xxk7")
+direction = Vector2i(0, -1)
+metadata/_custom_type_script = "uid://ceiao66lx5g"
+
+[resource]
+script = ExtResource("2_n24ub")
+part_name = "Test Part 1x1"
+weight = 1.0
+hull_thickness = 2.0
+cost = 10
+connectors = Array[ExtResource("1_7xxk7")]([SubResource("Resource_7xxk7"), SubResource("Resource_n24ub"), SubResource("Resource_jvtf6"), SubResource("Resource_yxqau")])
+metadata/_custom_type_script = "uid://ep8h4hxojl7n"

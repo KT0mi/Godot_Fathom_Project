@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bwfgpo630o6ul"]
+
+[ext_resource type="Script" uid="uid://p6h2xj313rcx" path="res://Scripts/SceneScripts/TestScene.gd" id="1_b5ayd"]
+
+[node name="TestScene" type="Control" unique_id=997137416]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b5ayd")
+
+[node name="Label" type="Label" parent="." unique_id=481343147]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 65.0
+offset_right = 786.0
+offset_bottom = 389.0
+theme_override_font_sizes/font_size = 38
+text = "Test Test"
+
+[node name="XBox" type="SpinBox" parent="." unique_id=2107723326]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 502.0
+offset_right = 184.5
+offset_bottom = 596.0
+prefix = "x:"
+
+[node name="YBox" type="SpinBox" parent="." unique_id=1336685763]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 502.0
+offset_right = 312.5
+offset_bottom = 596.0
+prefix = "y:"
+
+[node name="Button" type="Button" parent="." unique_id=805859640]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 502.0
+offset_right = 558.0
+offset_bottom = 596.0
+text = "Place Part"
