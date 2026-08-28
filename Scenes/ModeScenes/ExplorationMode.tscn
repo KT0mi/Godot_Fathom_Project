@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cbi0pw8vbjrfv"]
+
+[node name="ExplorationMode" type="Control" unique_id=815647561]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RouteContainer" type="HBoxContainer" parent="." unique_id=1029903142]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 135.0
+offset_right = 953.0
+offset_bottom = 515.0

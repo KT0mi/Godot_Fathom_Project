@@ -31,24 +31,36 @@ func place(part: PlacedPart) -> void:
 		cells[c] = part
 	parts.append(part)
 
-func compute_stats() -> Dictionary:
-	var total_weight := 0.0
+func compute_stats() -> SubmarineStats:
+	var stats := SubmarineStats.new()
+	if parts.is_empty():
+		return stats
+ 
 	var weighted_pos := Vector2.ZERO
-	var total_thickness := 0.0
-	
+	var weighted_x_sum := 0.0
+	var unweighted_x_sum := 0.0
+	var cell_count := 0
+ 
 	for part in parts:
-		total_weight += part.data.weight
+		stats.total_weight += part.data.weight
+		stats.total_hull_thickness += part.data.hull_thickness
+ 
+		if part.data is WeaponPartData:
+			stats.weapon_parts.append(part.data as WeaponPartData)
+ 
 		for c in part.occupied_cells():
-			weighted_pos += Vector2(c.x, 0) * part.data.weight
-		total_thickness += part.data.hull_thickness
-		
-	var center_of_mass := Vector2.ZERO
-	if total_weight > 0.0:
-		center_of_mass = weighted_pos / total_weight
-	
-	return {
-		"total_weight": total_weight,
-		"center_of_mass": center_of_mass,
-		"total_thickness": total_thickness,
-		"part_count": parts.size()
-	}
+			weighted_pos += Vector2(c) * part.data.weight
+			weighted_x_sum += c.x * part.data.weight
+			unweighted_x_sum += c.x
+			cell_count += 1
+ 
+	stats.part_count = parts.size()
+ 
+	if stats.total_weight > 0.0:
+		stats.center_of_mass = weighted_pos / stats.total_weight
+ 
+	if cell_count > 0:
+		var geometric_center_x := unweighted_x_sum / cell_count
+		stats.horizontal_imbalance = abs(stats.center_of_mass.x - geometric_center_x)
+ 
+	return stats
