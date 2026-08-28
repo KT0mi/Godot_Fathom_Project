@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://1p822cuwt7lp"]
+
+[ext_resource type="Script" uid="uid://cxt2n1tanafcx" path="res://Scripts/SceneScripts/SubmarineStatsUI.gd" id="1_kg0gx"]
+
+[node name="SubmarineUI" type="Control" unique_id=861132225]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_kg0gx")
+
+[node name="SubmarineStatsContainer" type="FoldableContainer" parent="." unique_id=623413493]
+layout_mode = 0
+offset_left = 820.0
+offset_right = 1154.0
+offset_bottom = 251.0
+title = "Submarine Statistics"
+title_alignment = 1
+
+[node name="HSSContainer" type="VBoxContainer" parent="SubmarineStatsContainer" unique_id=1575585505]
+layout_mode = 2
+
+[node name="Weight" type="FoldableContainer" parent="SubmarineStatsContainer/HSSContainer" unique_id=1063080087]
+layout_mode = 2
+folded = true
+title = "Weight: "
+
+[node name="HWContainer" type="VBoxContainer" parent="SubmarineStatsContainer/HSSContainer/Weight" unique_id=1449715675]
+visible = false
+layout_mode = 2
+
+[node name="WeightImbalanceLabel" type="Label" parent="SubmarineStatsContainer/HSSContainer/Weight/HWContainer" unique_id=1961666642]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Weight Imbalance: "
+
+[node name="AddedTravelTimeLabel" type="Label" parent="SubmarineStatsContainer/HSSContainer/Weight/HWContainer" unique_id=238280895]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Added Travel Time:
+"
+
+[node name="HullThickness" type="FoldableContainer" parent="SubmarineStatsContainer/HSSContainer" unique_id=1202148820]
+layout_mode = 2
+folded = true
+title = "Hull Thickness: "
+
+[node name="HHTContainer" type="VBoxContainer" parent="SubmarineStatsContainer/HSSContainer/HullThickness" unique_id=1719069098]
+visible = false
+layout_mode = 2
+
+[node name="DepthDangerLevelLabel" type="Label" parent="SubmarineStatsContainer/HSSContainer/HullThickness/HHTContainer" unique_id=363277818]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Depth Danger Level: "
+
+[node name="MaxDepthLabel" type="Label" parent="SubmarineStatsContainer/HSSContainer/HullThickness/HHTContainer" unique_id=1649628992]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Max Depth: "
+
+[node name="PartCount" type="FoldableContainer" parent="SubmarineStatsContainer/HSSContainer" unique_id=119070645]
+layout_mode = 2
+folded = true
+title = "Total Parts: "
+
+[node name="HPCContainer" type="VBoxContainer" parent="SubmarineStatsContainer/HSSContainer/PartCount" unique_id=1406125682]
+visible = false
+layout_mode = 2
+
+[node name="BaseAttackLabel" type="Label" parent="SubmarineStatsContainer/HSSContainer/PartCount/HPCContainer" unique_id=660870038]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Base Attack:"
+
+[node name="BaseArmorLabel" type="Label" parent="SubmarineStatsContainer/HSSContainer/PartCount/HPCContainer" unique_id=1232754575]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Base Armor:"
+
+[node name="GridContainer" type="GridContainer" parent="SubmarineStatsContainer/HSSContainer" unique_id=2094269176]
+layout_mode = 2
+columns = 6

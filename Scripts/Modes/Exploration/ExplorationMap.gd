@@ -6,8 +6,6 @@ extends RefCounted
 
 const DEPTH_PER_LAYER := 25.0
 
-const DEFAULT_ENCOUNTER := preload("res://Resources/Encounters/test_encounter.gd")
-
 var nodes: Dictionary = {}          # String id -> MapNode
 var layers: Array = []              # Array[Array[String]] — node ids per layer
 var current_node_id: String = ""

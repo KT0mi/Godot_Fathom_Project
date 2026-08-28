@@ -12,6 +12,7 @@ const STARTING_MONEY := 100
 const DEPTH_PER_THICKNESS_UNIT:= 100.0
 const UPKEEP_PER_DAY := 1
 const DIFFICULTY_PER_DAY := 0.01
+const IMBALANCE_DAYS_FACTOR := 0.05
 
 var submarine: SubmarineData = SubmarineData.new()
 var money : int = STARTING_MONEY

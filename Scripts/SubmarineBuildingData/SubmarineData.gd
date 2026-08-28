@@ -30,6 +30,7 @@ func place(part: PlacedPart) -> void:
 	for c in part.occupied_cells():
 		cells[c] = part
 	parts.append(part)
+	EventBus.part_placed.emit(part)
 
 func compute_stats() -> SubmarineStats:
 	var stats := SubmarineStats.new()

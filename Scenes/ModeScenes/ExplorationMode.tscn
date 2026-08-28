@@ -13,7 +13,7 @@ script = ExtResource("1_r5ih1")
 
 [node name="RouteContainer" type="HBoxContainer" parent="." unique_id=1029903142]
 layout_mode = 0
-offset_left = 110.0
-offset_top = 22.0
-offset_right = 1094.0
-offset_bottom = 583.0
+offset_left = 91.0
+offset_top = 247.0
+offset_right = 1075.0
+offset_bottom = 419.0

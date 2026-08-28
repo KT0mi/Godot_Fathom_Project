@@ -30,9 +30,15 @@ func _load_all(dir_path: String) -> Array[EncounterData]:
 	var file_name := dir.get_next()
 	while file_name != "":
 		if file_name.ends_with(".gd"):
-			var res := load(dir_path + file_name)
-			if res is EncounterData:
-				out.append(res)
+			var script := load(dir_path + file_name) as GDScript
+			if script == null:
+				push_warning("EncounterDatabase: couldn't load script %s" % file_name)
+				file_name = dir.get_next()
+				continue
+ 
+			var instance = script.new()
+			if instance is EncounterData:
+				out.append(instance)
 				print("DIAGONOSTIC: Appended %s to encounter database." % (dir_path + file_name))
 			else:
 				push_warning("EncounterDatabase: %s is not an EncounterData" % file_name)

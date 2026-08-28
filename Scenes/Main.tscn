@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://h0p3thtliuil"]
 
 [ext_resource type="Script" uid="uid://cn5pcfdc8nv12" path="res://Scripts/SceneScripts/Main.gd" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://bwfgpo630o6ul" path="res://Scenes/TestScene.tscn" id="2_idj7w"]
+[ext_resource type="PackedScene" uid="uid://1p822cuwt7lp" path="res://Scenes/SubmarineUI.tscn" id="3_kln2b"]
+[ext_resource type="PackedScene" uid="uid://v1wuxrx8nnos" path="res://Scenes/RunDataUI.tscn" id="4_rgh2o"]
 
 [node name="Main" type="Control" unique_id=1817489742]
 layout_mode = 3
@@ -11,7 +14,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r150o")
 
+[node name="TestScene" parent="." unique_id=997137416 instance=ExtResource("2_idj7w")]
+visible = false
+layout_mode = 1
+
 [node name="ModeContainer" type="Control" parent="." unique_id=1370831099]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="SubmarineUI" parent="." unique_id=861132225 instance=ExtResource("3_kln2b")]
+layout_mode = 1
+
+[node name="RunDataUI" parent="." unique_id=187524745 instance=ExtResource("4_rgh2o")]
+layout_mode = 1

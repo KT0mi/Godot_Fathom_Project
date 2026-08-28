@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://v1wuxrx8nnos"]
+
+[ext_resource type="Script" uid="uid://ds6da7mhj7eba" path="res://Scripts/SceneScripts/RunDataUI.gd" id="1_n8d57"]
+
+[node name="RunDataUI" type="Control" unique_id=187524745]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_n8d57")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=272038268]
+layout_mode = 0
+offset_right = 221.0
+offset_bottom = 324.0
+
+[node name="MoneyLabel" type="Label" parent="VBoxContainer" unique_id=901383313]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Money: "
+
+[node name="CurrentDepthLabel" type="Label" parent="VBoxContainer" unique_id=846076101]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Current Depth: "
+
+[node name="DaysElapsedLabel" type="Label" parent="VBoxContainer" unique_id=315228836]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Days Elapsed: "

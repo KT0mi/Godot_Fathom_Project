@@ -2,7 +2,7 @@ extends Control
 
 @onready var route_container : HBoxContainer = $RouteContainer
 
-const IMBALANCE_DAYS_FACTOR := 0.05
+
 
 var map: ExplorationMap
 
@@ -42,6 +42,7 @@ func _commit_travel(node: MapNode, travel_days: float, new_depth: float) -> void
 	var cost := ceili(travel_days) * RunState.UPKEEP_PER_DAY
 	
 	if not RunState.spend_money(cost):
+		print("Not Enough Money to travel!")
 		return  # UI should already be preventing this by graying out the option
 	RunState.advance_days(travel_days)
 	RunState.set_depth(new_depth)
@@ -52,4 +53,4 @@ func _commit_travel(node: MapNode, travel_days: float, new_depth: float) -> void
 	GameFlow.goto_mode(GameFlow.mode_for_encounter_type(node.get_encounter_type()))
 
 func _calculate_travel_days(node: MapNode, stats: SubmarineStats) -> float:
-	return node.travel_time + stats.horizontal_imbalance * IMBALANCE_DAYS_FACTOR
+	return node.travel_time + stats.horizontal_imbalance * RunState.IMBALANCE_DAYS_FACTOR
