@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cbi0pw8vbjrfv"]
 
+[ext_resource type="Script" uid="uid://bub7nk08yi4yu" path="res://Scripts/Exploration/ExplorationMode.gd" id="1_r5ih1"]
+
 [node name="ExplorationMode" type="Control" unique_id=815647561]
 layout_mode = 3
 anchors_preset = 15
@@ -7,10 +9,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r5ih1")
 
 [node name="RouteContainer" type="HBoxContainer" parent="." unique_id=1029903142]
 layout_mode = 0
-offset_left = 210.0
-offset_top = 135.0
-offset_right = 953.0
-offset_bottom = 515.0
+offset_left = 110.0
+offset_top = 22.0
+offset_right = 1094.0
+offset_bottom = 583.0

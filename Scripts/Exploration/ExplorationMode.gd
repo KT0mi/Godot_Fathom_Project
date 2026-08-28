@@ -22,8 +22,8 @@ func _refresh_available_nodes() -> void:
 		var btn := Button.new()
 		btn.text = "Route %d: %s" % [i, str(option.type)]
 		btn.pressed.connect(_on_route_chosen.bind(option))
-		btn.add_child(route_container)
-	pass
+		route_container.add_child(btn)
+		i+=1
 
 func _on_route_chosen(node: MapNode) -> void:
 	var stats : SubmarineStats = RunState.submarine.compute_stats()
