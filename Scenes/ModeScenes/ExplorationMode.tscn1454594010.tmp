@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbi0pw8vbjrfv"]
 
-[ext_resource type="Script" uid="uid://bub7nk08yi4yu" path="res://Scripts/Modes/Exploration/ExplorationMode.gd" id="1_r5ih1"]
+[ext_resource type="Script" uid="uid://bub7nk08yi4yu" path="res://Scripts/Exploration/ExplorationMode.gd" id="1_r5ih1"]
 
 [node name="ExplorationMode" type="Control" unique_id=815647561]
 layout_mode = 3

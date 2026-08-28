@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 EventBus="*uid://cn73tnsrtv5nu"
 RunState="*uid://cwc4k0yjprsu"
 GameFlow="*uid://but7ycvcdj3a2"
+EncounterDatabase="*uid://pggkyhvem5gt"
 
 [physics]
 

@@ -6,6 +6,8 @@ extends RefCounted
 
 const DEPTH_PER_LAYER := 25.0
 
+const DEFAULT_ENCOUNTER := preload("res://Resources/Encounters/test_encounter.gd")
+
 var nodes: Dictionary = {}          # String id -> MapNode
 var layers: Array = []              # Array[Array[String]] — node ids per layer
 var current_node_id: String = ""
@@ -13,12 +15,11 @@ var current_node_id: String = ""
 ## Relative odds of each encounter type appearing. Tune freely —
 ## this is exactly the kind of thing you'll want exposed for balancing.
 var type_weights := {
-	MapNode.Type.CREATURE: 4,
-	MapNode.Type.TREASURE: 2,
-	MapNode.Type.CATASTROPHE: 2,
-	MapNode.Type.SHOP: 1,
+	EncounterData.Type.CREATURE: 4,
+	EncounterData.Type.TREASURE: 2,
+	EncounterData.Type.CATASTROPHE: 2,
+	EncounterData.Type.SHOP: 1,
 }
-
 
 func generate(layer_count: int, min_choices: int, max_choices: int) -> void:
 	nodes.clear()
@@ -33,9 +34,12 @@ func generate(layer_count: int, min_choices: int, max_choices: int) -> void:
 		for i in choice_count:
 			var node := MapNode.new()
 			node.id = "L%d_N%d" % [layer_i, i]
-			node.type = _random_type()
 			node.layer = layer_i
 			node.travel_time = randf_range(1.0, 3.0)
+			
+			var chosen_type := EncounterData.Type.TREASURE #_random_type()
+			node.encounter = EncounterDatabase.get_random_encounter(chosen_type)
+			
 			nodes[node.id] = node
 			this_layer_ids.append(node.id)
 	
@@ -68,7 +72,7 @@ func _connect_layers(prev_layer_ids: Array[String], next_layer_ids: Array[String
 			nodes[random_prev].connections.append(next_id)
 
 
-func _random_type() -> MapNode.Type:
+func _random_type() -> EncounterData.Type:
 	var total := 0
 	for w in type_weights.values():
 		total += w
@@ -78,7 +82,7 @@ func _random_type() -> MapNode.Type:
 		acc += type_weights[t]
 		if roll < acc:
 			return t
-	return MapNode.Type.CREATURE
+	return EncounterData.Type.CREATURE
 
 
 func get_available_next_nodes() -> Array[MapNode]:
