@@ -15,7 +15,6 @@ grow_vertical = 2
 script = ExtResource("1_r150o")
 
 [node name="TestScene" parent="." unique_id=997137416 instance=ExtResource("2_idj7w")]
-visible = false
 layout_mode = 1
 
 [node name="ModeContainer" type="Control" parent="." unique_id=1370831099]

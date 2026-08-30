@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dmo5i1yrocw2w"]
+
+[ext_resource type="Script" uid="uid://cd33fnwmqai6q" path="res://Scripts/SceneScripts/SubmarineBuilding.gd" id="1_1uxn5"]
+[ext_resource type="Script" uid="uid://bpgg7c3h4dfsb" path="res://Scripts/SceneScripts/BuildGridCanvas.gd" id="2_k1kab"]
+
+[node name="SubmarineBuilding" type="Control" unique_id=1133619424]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_1uxn5")
+
+[node name="BuildGridCanvas" type="Control" parent="." unique_id=428693505]
+clip_contents = true
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("2_k1kab")
+
+[node name="PartsLayer" type="Control" parent="BuildGridCanvas" unique_id=1941116012]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PaletteFoldableContainer" type="FoldableContainer" parent="." unique_id=1748936456]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+title = "Parts"
+title_alignment = 1
+title_position = 1
+
+[node name="PaletteScroll" type="ScrollContainer" parent="PaletteFoldableContainer" unique_id=808801843]
+layout_mode = 2
+vertical_scroll_mode = 0
+
+[node name="PaletteHBox" type="HBoxContainer" parent="PaletteFoldableContainer/PaletteScroll" unique_id=584528662]
+layout_mode = 2
+
+[node name="DragLayer" type="Control" parent="." unique_id=105412984]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

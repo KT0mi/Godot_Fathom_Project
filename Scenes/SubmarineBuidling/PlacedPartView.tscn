@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ce1pd558dkx8y"]
+
+[ext_resource type="Script" uid="uid://b8gwgs7w3fbbh" path="res://Scripts/SceneScripts/PlacedPartView.gd" id="1_ls4bv"]
+
+[node name="PlacedPartView" type="Control" unique_id=958186684]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ls4bv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2100678045]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

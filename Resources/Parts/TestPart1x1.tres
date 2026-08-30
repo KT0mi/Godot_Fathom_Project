@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ceiao66lx5g" path="res://Scripts/SubmarineBuildingData/PartConnector.gd" id="1_7xxk7"]
 [ext_resource type="Script" uid="uid://ep8h4hxojl7n" path="res://Scripts/SubmarineBuildingData/PartData.gd" id="2_n24ub"]
+[ext_resource type="Texture2D" uid="uid://dq4yeg7y76j5m" path="res://Assets/Parts/Sprites/test_part.png" id="3_n24ub"]
 
 [sub_resource type="Resource" id="Resource_7xxk7"]
 script = ExtResource("1_7xxk7")
@@ -29,4 +30,5 @@ weight = 1.0
 hull_thickness = 2.0
 cost = 10
 connectors = Array[ExtResource("1_7xxk7")]([SubResource("Resource_7xxk7"), SubResource("Resource_n24ub"), SubResource("Resource_jvtf6"), SubResource("Resource_yxqau")])
+sprite = ExtResource("3_n24ub")
 metadata/_custom_type_script = "uid://ep8h4hxojl7n"

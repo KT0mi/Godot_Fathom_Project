@@ -22,7 +22,7 @@ func setup() -> void:
 	refresh()
 	EventBus.part_placed.connect(func(c): 
 		print("Placed Part and refreshed ui")
-		refresh)
+		refresh())
 
 func populate_grid() -> void:
 	var grid_size := grid_container.columns

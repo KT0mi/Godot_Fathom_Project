@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://gna871rq7km0"]
+
+[ext_resource type="Script" uid="uid://dsyk3prsy8f5n" path="res://Scripts/SceneScripts/PartPaletteSlotUI.gd" id="1_0ujah"]
+[ext_resource type="Script" uid="uid://dy1frnwkv50t0" path="res://Scripts/SceneScripts/Draggable.gd" id="2_kud0f"]
+
+[node name="PartPaletteSlotUi" type="PanelContainer" unique_id=2095122250]
+custom_minimum_size = Vector2(64, 64)
+script = ExtResource("1_0ujah")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=350664952]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin" unique_id=1928390257]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Icon" type="TextureRect" parent="Margin/VBoxContainer" unique_id=316474888]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+mouse_filter = 2
+stretch_mode = 5
+
+[node name="Draggable" type="Node" parent="." unique_id=943474277]
+script = ExtResource("2_kud0f")
+metadata/_custom_type_script = "uid://dy1frnwkv50t0"
