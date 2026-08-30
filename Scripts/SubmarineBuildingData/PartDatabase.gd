@@ -21,6 +21,7 @@ func _load_all() -> void:
 		if not dir.current_is_dir() and file_name.ends_with(".tres"):
 			var res := load(PARTS_DIR + file_name)
 			if res is PartData:
+				print("DIAGONOSTIC: Added new part %s to part database." % (PARTS_DIR + file_name))
 				all_parts.append(res)
 			else:
 				push_warning("PartDatabase: %s is not a PartData" % file_name)

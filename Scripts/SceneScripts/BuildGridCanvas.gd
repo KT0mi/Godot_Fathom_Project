@@ -12,11 +12,19 @@ var _pan_start_offset: Vector2
 
 @onready var parts_layer : Control = $PartsLayer
 
+const PLACED_PART_VIEW_SCENE := preload("res://Scenes/SubmarineBuidling/PlacedPartView.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	clip_contents = true
 	pan_offset = size / 2.0 - Vector2(grid_dimensions) * cell_size / 2
 	_apply_pan()
+	EventBus.part_placed.connect(_on_part_placed)
+
+func _on_part_placed(part: PlacedPart) -> void:
+	var view := PLACED_PART_VIEW_SCENE.instantiate()
+	parts_layer.add_child(view)
+	view.setup(part, self)
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.keycode == Key.KEY_R and not _resetting:
