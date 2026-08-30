@@ -7,6 +7,9 @@ var rot_steps: int = 0
 var grid: BuildGridCanvas
 var is_ghost := false
 
+var pos_tween : Tween = null
+var cashed_cell : Vector2 = Vector2.ZERO
+
 @onready var texture_rect: TextureRect = $TextureRect
 
 # --- Permanent (post-commit), spawned in response to EventBus.part_placed ---
@@ -44,5 +47,13 @@ func rotate_ghost() -> void:
 	set_ghost_cell(origin_cell)   # re-syncs transform + re-validates + re-tints
 
 func _sync_transform() -> void:
-	position = grid.cell_to_local(origin_cell)
+	var sync_cell := grid.cell_to_local(origin_cell)
+	if cashed_cell != sync_cell:
+		if pos_tween:
+			pos_tween.kill()
+		pos_tween = create_tween()
+		pos_tween.set_ease(Tween.EASE_OUT)
+		pos_tween.set_trans(Tween.TRANS_EXPO)
+		pos_tween.tween_property(self, "position", sync_cell, 0.2)
+	#position = grid.cell_to_local(origin_cell)
 	rotation = rot_steps * PI / 2.0
